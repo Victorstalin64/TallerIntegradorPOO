@@ -6,15 +6,8 @@ public class CuentaAhorros extends CuentaBancaria {
     }
 
     @Override
-    public void retirar(double monto) {
-
-    }
-
-
-    @Override
     public double calcularInteresMensual() {
         double interes = (getSaldo() * 0.03) / 12;
-        deposito(interes);
         return interes;
     }
 }

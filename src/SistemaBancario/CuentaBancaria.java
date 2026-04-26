@@ -30,6 +30,7 @@ public abstract class CuentaBancaria {
         if (cantidad > 0) {
             this.saldo += cantidad;
             System.out.println("Depósito exitoso de: $" + cantidad);
+            System.out.println("Saldo actual: $"+(this.saldo));
         } else {
             System.out.println("Error: La cantidad a depositar debe ser mayor a 0");
         }
@@ -40,6 +41,7 @@ public abstract class CuentaBancaria {
             if (this.saldo >= cantidad) {
                 this.saldo -= cantidad;
                 System.out.println("Retiro exitoso de: $" + cantidad);
+                System.out.println("Saldo actual: $"+(this.saldo));
             } else {
                 System.out.println("Error: Fondos insuficientes. Su saldo es de: $" + this.saldo);
             }
@@ -48,7 +50,6 @@ public abstract class CuentaBancaria {
         }
     }
 
-    public abstract void retirar(double monto);
 
     public abstract double calcularInteresMensual();
 
@@ -56,7 +57,7 @@ public abstract class CuentaBancaria {
     public String toString() {
         return "====== DATOS DE LA CUENTA ======\n"
                 +"Titular: " + titular +"\n"
-                + " | Cuenta: " + numeroCuenta +"\n"
-                + " | Saldo: $" + saldo;
+                + "Cuenta: " + numeroCuenta +"\n"
+                + "Saldo: $" + saldo;
     }
 }
