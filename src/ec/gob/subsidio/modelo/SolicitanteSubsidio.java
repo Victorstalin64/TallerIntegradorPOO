@@ -68,12 +68,12 @@ public class SolicitanteSubsidio {
     }
 
     public void generarResultado() {
-        System.out.println("=== RESULTADOS SUBSIDIO ===");
+        System.out.println("=== RESULTADOS DE LA EVALUACION===");
 
         if (isSubsidioAprobado()) {
-            System.out.println("Usted fue aprobado para el subsidio.");
+            System.out.println("Subsidio aprobado: Cumple con todos los requisitos establecidos por el Gobierno del Ecuador.");
         } else {
-            System.out.println("Usted no fue aprobado por:");
+            System.out.println("Subsidio negado por: ");
             if (ingresosMensuales >= 1200) {
                 System.out.println("Su ingreso mensual es mayor a 1200");
             }else if (cantidadVehiculos > 1) {
@@ -85,22 +85,31 @@ public class SolicitanteSubsidio {
     }
 
     public String toString() {
-        return "Datos del Solicitante:\n" +
+        return "\n===== Datos del Solicitante =====\n" +
                 "Nombre: " + nombreCompleto + "\n" +
                 "Cédula: " + cedula + "\n" +
-                "Ingresos: $" + ingresosMensuales + "\n" +
-                "Vehículos: " + cantidadVehiculos + "\n" +
-                "Residente: " + (viveEnEcuador ? "Sí" : "No");
+                "Ingresos mensuales: $" + ingresosMensuales + "\n" +
+                "Cantidad de vehículos: " + cantidadVehiculos + "\n" +
+                "Vive en Ecuador: " + (viveEnEcuador ? "Sí" : "No");
     }
 
     public static String mostrarReglasSubsidio() {
-        return "REGLAS PARA LA APROBACIÓN DEL SUBSIDIO:\n" +
-                "1. Residir actualmente en el país (Ecuador).\n" +
-                "2. Tener ingresos mensuales menores a $1200.\n" +
-                "3. Poseer exactamente 1 vehículo registrado.";
+        return "=============== REGLAS PARA OBTENER SUBSIDIO ===============:\n" +
+                "1. Tener ingresos mensuales menores o iguales a $1200\n" +
+                "2. No poseer mas de un vehiculo registrado \n" +
+                "3. Tener residencia en Ecuador\n"+
+                "-----------------------------------------------------------\n";
     }
 
     private double distanciaRecorrida;
+
+    public void setDistanciaRecorrida(double distanciaRecorrida) {
+        this.distanciaRecorrida = distanciaRecorrida;
+    }
+
+    public double getDistanciaRecorrida() {
+        return distanciaRecorrida;
+    }
 
     public double calcularConsumoMensual() {
         double galones = this.distanciaRecorrida / 40;
