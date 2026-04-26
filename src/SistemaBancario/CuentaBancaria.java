@@ -22,6 +22,9 @@ public abstract class CuentaBancaria {
         return saldo;
     }
 
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
 
     public void deposito(double cantidad) {
         if (cantidad > 0) {
@@ -44,6 +47,9 @@ public abstract class CuentaBancaria {
             System.out.println("Error: La cantidad a retirar debe ser mayor a 0.");
         }
     }
+
+    public abstract void retirar(double monto);
+
     public abstract double calcularInteresMensual();
 
     @Override
