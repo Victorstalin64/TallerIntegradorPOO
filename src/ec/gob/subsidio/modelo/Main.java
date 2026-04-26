@@ -30,12 +30,13 @@ public class Main {
         System.out.println("\n" + solicitante.toString());
         solicitante.generarResultado();
 
+        System.out.println("\n===== CALCULOS DE CONSUMO MENSUAL =====");
         System.out.print("Ingrese su distancia recorrida en km: ");
         double distancia = sc.nextDouble();
-        System.out.println("===== CALCULOS DE CONSUMO MENSUAL =====");
         solicitante.setDistanciaRecorrida(distancia);
-        solicitante.calcularConsumoMensual();
-        solicitante.calcularConsumoMensual(distancia);
-
+        System.out.println("Consumo mensual estimado (sin km extra): " + solicitante.calcularConsumoMensual() + " galones");
+        System.out.print("Ingrese su distancia extra recorrida en km: ");
+        double kmExtra = sc.nextDouble();
+        System.out.println("Consumo con kilómetros extra (" + kmExtra + " km adicionales): " + solicitante.calcularConsumoMensual(kmExtra) + " galones");
     }
 }
