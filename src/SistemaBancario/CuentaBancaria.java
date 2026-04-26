@@ -14,26 +14,14 @@ public abstract class CuentaBancaria {
     public int getNumeroCuenta() {
         return numeroCuenta;
     }
-
-    public void setNumeroCuenta(int numeroCuenta) {
-        this.numeroCuenta = numeroCuenta;
-    }
-
     public String getTitular() {
         return titular;
-    }
-
-    public void setTitular(String titular) {
-        this.titular = titular;
     }
 
     public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
 
     public void deposito(double cantidad) {
         if (cantidad > 0) {
