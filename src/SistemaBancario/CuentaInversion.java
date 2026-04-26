@@ -7,16 +7,6 @@ public class CuentaInversion extends CuentaBancaria {
     }
 
     @Override
-    public void retirar(double monto) {
-        if (monto > 0 && monto <= getSaldo()) {
-            setSaldo(getSaldo() - monto);
-            System.out.println("Retiro exitoso");
-        } else {
-            System.out.println("Error: Fondos insuficientes");
-        }
-    }
-
-    @Override
     public double calcularInteresMensual() {
         double tasa;
 

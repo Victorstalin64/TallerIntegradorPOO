@@ -7,15 +7,6 @@ public class CuentaCorriente extends CuentaBancaria {
     }
 
     @Override
-    public void retirar(double monto){
-
-        if (monto>0&& monto <= getSaldo()+ sobregiro ){
-            setSaldo(getSaldo()-monto);
-        }else{
-            System.out.println("Excede el sobregiro ");
-        }
-    }
-    @Override
     public double calcularInteresMensual() {
         return 0;
     }
